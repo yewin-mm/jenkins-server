@@ -156,13 +156,15 @@ Configure Link
 <img src="https://github.com/yewin-mm/jenkins-server/blob/master/github/template/images/overview/configure_link.png" /><br/>
 </h3>
 
-* Just click `Save and Finish` button to go with `localhost:9000` which port I put in `docker compose`.
-* Click `Start using Jenkins`.
-* After that you can see the `jenkins server portal` like below.
+* Just click `Save and Finish` button to go with `localhost:9000` which port I put in `docker compose` file.
+* After that, Click `Start using Jenkins`.
+* After that, you can see the `Jenkins server portal` like below.
 <h3 align="center">
 Sample Jenkins Server Portal Dashboard.
 <img src="https://github.com/yewin-mm/jenkins-server/blob/master/github/template/images/overview/dashboard.png" /><br/>
 </h3>
+
+* Finally, you can successfully set up Jenkins Server with docker.
 
 ***Have Fun and Enjoy in Learning Code***
 
