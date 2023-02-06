@@ -102,7 +102,7 @@ You can learn sample docker-compose commands here. [Spring Boot Docker Compose S
   * ```sh
     docker-compose up -d
     ```
-  * After that you can call jenkins server portal with `http://localhost:9000/` through browser. (if you run jenkins at server, you need to add `server ip` or `domain` instead of `localhost`).
+  * After that you can call jenkins server portal with `http://localhost:9000/` through browser. (if you run jenkins at vm server, you need to add `server ip` or `domain` instead of `localhost`).
 
 <a name="unlock"></a>
 #### Unlock Jenkins
