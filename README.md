@@ -115,13 +115,14 @@ You can learn sample docker-compose commands here. [Spring Boot Docker Compose S
 
 * Type below command in `CMD` or `Terminal`.
   * ```sh
-        docker exec jenkins cat /var/jenkins_home/secrets/initialAdminPassword
+    docker exec jenkins cat /var/jenkins_home/secrets/initialAdminPassword
     ```
 * Then you will get initial password like below
 <h3 align="center">
 Sample initial password
 <img src="https://github.com/yewin-mm/jenkins-server/blob/master/github/template/images/overview/get_pwd.png" /><br/>
 </h3>
+
 * Copy initial password which appeared in your `CMD` or `Terminal` by typing above command.
 * Paste in jenkins server portal to unlock jenkins server.
 * Please note that initial password is no need to use in the future. It's need only one time (this time). 
@@ -153,6 +154,7 @@ Sample Create Admin User
 Configure Link
 <img src="https://github.com/yewin-mm/jenkins-server/blob/master/github/template/images/overview/configure_link.png" /><br/>
 </h3>
+
 * Just click `Save and Finish` button to go with `localhost:9000` which port I put in `docker compose`.
 * Click `Start using Jenkins`.
 * After that you can see the `jenkins server portal` like below.
