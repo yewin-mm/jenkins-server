@@ -150,6 +150,7 @@ Sample Create Admin User
 <a name="configure"></a>
 #### Configure Portal Access Link
 * After you've created admin user,
+* You can see Instance Configuration wizard like below.
 <h3 align="center">
 Configure Link
 <img src="https://github.com/yewin-mm/jenkins-server/blob/master/github/template/images/overview/configure_link.png" /><br/>
