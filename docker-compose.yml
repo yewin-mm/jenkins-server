@@ -15,9 +15,13 @@ services:
       - "9000:8080"
       - "50000:50000"
     networks:
+      # if you run your db as container like this ways https://github.com/yewin-mm/mysql-docker-container
+      # you need comment out below jenkins, aliases and docker. And also need to comment out in below networks section
       jenkins:
         aliases: 
           - docker
+      # uncomment below mysql if you run your db as container. And also need to uncomment in below networks section
+      # - mysql
     volumes: 
       - jenkins-data:/var/jenkins_home
       - jenkins-docker-certs:/certs/client
@@ -29,6 +33,11 @@ volumes:
     name: jenkins-docker-certs
 
 networks:
+  # if you run your db as container like this ways https://github.com/yewin-mm/mysql-docker-container
+  # you need comment out below jenkins, driver and name
   jenkins:
     driver: bridge
     name: jenkins
+  # uncomment below mysql and external if you run your db as container. (add your db container network)
+  # mysql:
+    # external: true

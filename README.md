@@ -98,6 +98,21 @@ You can learn sample docker-compose commands here. [Spring Boot Docker Compose S
 <a name="run"></a>
 #### Run Jenkins Server
 * Below commands need to type in your `CMD` or `Terminal` where path should be in your application folder.
+* Before you run below `docker-compose up -d`, 
+  * You need to check your db.
+  * If you run your database as normal, it's ok, you can skip below steps and type below `up` command under Run Jenkins Server title.
+  * But if you run your database as container, you need to change a bit in this Docker compose file.
+  * Because if you run your db as container like this ways [Run MySQL DB as Container](https://github.com/yewin-mm/mysql-docker-container)
+  * You might got test error in Jenkins Server for your application when Jenkins Server do test for database connection.
+  * Because if you run Jenkins Server as container, that container can't connect to DB container if those containers are not going under same network.
+  * So, you need to run your Jenkins Server as same network with your DB container.
+  * Open your cloned `docker-compose.yml` file with text editor like sublime text, notepad++, etc.
+  * **Comment out** `jenkins`, `aliases` and `- docker` under `networks` tag under `services` section.
+  * **Uncomment** `- mysql` or your network name which you gave when you run your db as container. (you can check `docker network ls` command to see networks).
+  * **Comment out** `jenkins`, `driver` and `name` under `networks` section (which is below in that file).
+  * **Uncomment** `- mysql`, `external: true` or your network name which you gave when you run your db as container.
+  * After that, `Save` the file and type below `up` command.
+
 * Run Jenkins Server (with port 9000)
   * ```sh
     docker-compose up -d
