@@ -2,7 +2,7 @@ version: "3.9"
 
 services:
   jenkins:
-    #image: jenkins/jenkins:lts
+    #image: jenkins/jenkins:lts-alpine
     # I don't run image with above and I get jenkins image with Dockerfile and build that file with below build . command
     # (you can reference to my Dockerfile for jenkins image)
     build: .

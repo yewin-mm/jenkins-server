@@ -1,3 +1,4 @@
+# use alpine image for light weight
 FROM jenkins/jenkins:lts-alpine
 
 USER root
