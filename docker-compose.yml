@@ -21,7 +21,7 @@ services:
       - "50000:50000"
     networks:
       # Here, I run my db as this way -> https://github.com/yewin-mm/mysql-docker-container
-      # So, I need to join my MySQL container network to access my db from application for unit testing
+      # So, I need to join my MySQL container network to access my db from application for unit testing and accessing to my local db
       # if you run MySQL db with container and gave network name not like me, 
       # you need to add your network name instead of below -mysql and you need to change that name in below network section.
       - mysql
