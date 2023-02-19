@@ -45,6 +45,10 @@
       -  [Install Suggested Plugins](#install-plugins)
       -  [Create Admin User](#create-user)
       -  [Configure Portal Access Link](#configure)
+    - [Setting Up](#setup)
+      - [Add Maven Tools](#maven)
+      - [Add Docker Hub Credentials](#docker)
+    - [Testing](#testing)
 - [Contact Me](#contact)
 - [Contributing](#Contributing)
 
@@ -180,6 +184,43 @@ Sample Jenkins Server Portal Dashboard.
 </h3>
 
 * Finally, you can successfully set up Jenkins Server with docker.
+
+<a name="setup"></a>
+### Setting Up
+* You can add tools, pre-defined credentials in Jenkins Server by below.
+* In my case, I need maven to build my applications and docker hub credentials to accessing docker hub for pushing, pulling images (here, that could be any image repository instead of docker hub).
+
+<a name="maven"></a>
+#### Add Maven Tools
+* You can add maven tools to build your applications.
+* There are 3 ways to use maven with Jenkins
+  1. you can use docker maven image as agent (this way is a bit harder than way 2, but you can use different maven version as you want and can use share volume storage which not to download dependency every time)
+  2. you can use maven as tools and install in Jenkins (this way is easy and with that way, you need to use only specific maven version which you installed in Jenkins)
+  3. you can link to dockerfile which pull maven image from docker hub. (this way is a bit hard to handle for beginners)
+  
+  * Here, I used way 2 as that is easy and understandable
+  * In Jenkins Server Portal,
+  * Go to `Manage Jenkins` sub menu -> `Global Tool Configuration` -> under `Maven` section, add like below picture
+    <h3 align="center">
+    Add Maven Tools as global
+    <img src="https://github.com/yewin-mm/jenkins-server/blob/master/github/template/images/overview/maven.png" /><br/>
+    </h3>
+  * Please note that, you need to start with `Capital` letter in name field like `Maven-{any}`
+  * After that Click `save`.
+
+<a name="docker"></a>
+#### Add Docker Hub Credentials
+* You can add image repository like Docker Hub credentials as pre-defined.
+* Here, image repository can be anything like your cloud server, Docker Hub, etc.
+* Here, I will test with Docker Hub.
+  * Go to `Docker Hub cloud` and login with your account. [Docker-Hub](https://hub.docker.com/)
+  * Go to `Account Setting` under your profile.
+  * Click Security tag
+
+
+<a name="testing"></a>
+### Testing
+* You can test your Jenkins Server by creating sample pipeline 
 
 ***Have Fun and Enjoy in Learning Code***
 
