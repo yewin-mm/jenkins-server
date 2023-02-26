@@ -7,13 +7,14 @@ services:
     # (you can reference to my Dockerfile for jenkins image)
     build: .
     container_name: jenkins
-    #command: /bin/sh -c "jenkins.sh"
-    # add user to group with uid and gid
-    #user: 1000:10001
+    # user: jenkins
+    # user: root
+    # add user to group with uid and gid (I don't need this step as it's already in dockerfile)
+    # user: "1001:1001"
     restart: unless-stopped
-    #privileged: true
     environment: 
       - DOCKER_TLS_CERTDIR=/certs
+      # - DOCKER_HOST=unix:///var/run/docker.sock
     labels:
       com.example.description: "Jenkins Server by Ye Win"
     ports: 
@@ -39,25 +40,24 @@ services:
       - jenkins-data:/var/jenkins_home
       - jenkins-docker-certs:/certs/client
 
-
-      # Below is bind mount with jenkins to your host docker daemon, 
-      # but it has security risk and so I installed docker cli in my jenkins server with dockerfile. (you can reference to my Dockerfile)
-
-      # bind with docker sock and jenkins to enable docker command in jenkins 
+      # bind with docker sock and jenkins to enable docker action in jenkins 
       # it's not recommend option as it's difficult to maintain and less security, 
       # it's better using to build image with Kaniko project together with kubernetes than binding with docker socket in jenkins
-      # but here, I used traditional method to use docker command in jenkins as sample. So, I mount with docker sock.
-
-      # bind with your docker installation directory
-      #- /usr/bin/docker:/usr/bin/docker
-      # bind with docker sock binary directory
-      #- /var/run/docker.sock:/var/run/docker.sock
+      - /var/run/docker.sock:/var/run/docker.sock
+      
+    # group_add:
+      # - docker
+    # command: sh -c "chgrp docker /var/run/docker.sock && jenkins.sh"
+    # command: sh -c "chmod 660 /var/run/docker.sock"
+    # command: sh -c "/script.sh && exec myexecutable"
+      
 
     # set timezone to Myanmar
     # you can set your country timezone, can see full zone id here (https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)
     environment:
       - TZ=Asia/Yangon
-     
+
+
 volumes: 
   jenkins-data:
     name: jenkins-data
@@ -66,9 +66,8 @@ volumes:
 
 networks:
   # Here, I run my db as this way -> https://github.com/yewin-mm/mysql-docker-container
-  # So, I need to join my MySQL container network to access my db from application for unit testing.
-  # if you run MySQL db with container and gave network name not like me, 
-  # you need to add your network name instead of below -mysql and you need to change that name in below network section.
+  # So, I need to join my MySQL container network which in in external container to access my db from application for unit testing running.
+  # if you run MySQL db with container and gave network name not like me,   
   mysql:
     external: true
 
@@ -78,4 +77,4 @@ networks:
   #jenkins:
     #driver: bridge
     #name: jenkins
-  
+
