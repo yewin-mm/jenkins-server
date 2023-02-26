@@ -27,6 +27,11 @@
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/ye-win-1a33a292/
 
+<h3 align="center">
+  Jenkins CI Server (photo from Google)
+  <img src="https://github.com/yewin-mm/jenkins-server/blob/master/github/template/images/overview/jenkins_ci.png" /><br/>
+</h3>
+
 # jenkins-server
 * This is a guide to create Jenkins server with Docker compose.
 * You can check out step-by-step guide in [Instruction](#instruction) and [Setting up](#setup) sections.
