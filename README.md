@@ -1,4 +1,4 @@
-# spring-boot-jpa-docker-compose
+# jenkins-server
 <!-- PROJECT SHIELDS -->
 
 <!--
