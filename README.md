@@ -97,7 +97,7 @@ You should see basic detail instructions first in here [Spring Boot Application 
 If you are not good enough in basic Docker Compose commands, you can learn some commands in below projects. <br>
 Click below links.
 * [Spring Boot Docker Sample](https://github.com/yewin-mm/spring-boot-docker-sample) (to get basic docker commands)
-* [Spring Boot Docker Compose Sample](https://github.com/yewin-mm/spring-boot-docker-compose-sample) (to get basic docker compose sample)
+* [Spring Boot JPA Docker Compose Sample](https://github.com/yewin-mm/spring-boot-jpa-docker-compose) (to get basic docker compose sample)
 
 
 <a name="clone-project"></a>
