@@ -335,7 +335,9 @@ Add Docker Hub Credentials in Jenkins
 Search Docker Plugins
 <img src="https://github.com/yewin-mm/jenkins-server/blob/master/github/template/images/overview/docker_plugins.png" /><br/>
 </h3>
+
 * Click `Restart Jenkins when installation is complete and no jobs are running` to apply plugins.
+    
     
   <h3 align="center">
   Add Docker Plugins
